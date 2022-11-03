@@ -1,3 +1,4 @@
+// function to generate AI RPS choice
 function getComputerChoice() {
   let x = Math.floor(Math.random() * 3 + 1);
   if (x === 1) {
@@ -74,4 +75,71 @@ function game() {
   }
 }
 
-game();
+// MAIN LOOP
+
+const gameStartDiv = document.querySelector(".game-start");
+
+function startGame(e) {
+  gameStartDiv.removeEventListener("click", startGame);
+  gameStartDiv.textContent = "Game Started";
+
+  // variables
+  let i = 0;
+  let playerScore = 0;
+  let computerScore = 0;
+  let drawScore = 0;
+  let result;
+
+  // linking to the html imgs to get player input
+  const imgs = document.querySelectorAll("img");
+
+  // linking to html score display divs
+  const playerScoreDiv = document.querySelector(".player-score-div");
+  const computerScoreDiv = document.querySelector(".computer-score-div");
+  const drawScoreDiv = document.querySelector(".draw-score-div");
+  const roundsPlayedDiv = document.querySelector(".rounds-played-div");
+
+  // function that is run every click
+  function logDecision(e) {
+    const playerSelection = this.classList.value;
+    const computerSelection = getComputerChoice();
+    result = playRound(playerSelection, computerSelection);
+
+    // keeping track of rounds
+    i++;
+    roundsPlayedDiv.innerText = i;
+
+    // checking for winner
+    if (i === 5) {
+      if (playerScore > computerScore) {
+        gameStartDiv.textContent = "Player Wins";
+      } else if (playerScore < computerScore) {
+        gameStartDiv.textContent = "Computer Wins";
+      } else {
+        gameStartDiv.textContent = "It is a Draw";
+      }
+    }
+
+    // checking for who won the round and keeping track of score
+    if (result.includes("Computer")) {
+      computerScore++;
+      computerScoreDiv.innerText = computerScore;
+    } else if (result.includes("Player")) {
+      playerScore++;
+      playerScoreDiv.innerText = playerScore;
+    } else {
+      drawScore++;
+      drawScoreDiv.innerText = drawScore;
+    }
+  }
+
+  // adding an event listener to each img for player input
+  imgs.forEach((img) =>
+    img.addEventListener("click", logDecision, {
+      capture: false,
+    })
+  );
+}
+
+// adding an event listener to the game start div
+gameStartDiv.addEventListener("click", startGame);

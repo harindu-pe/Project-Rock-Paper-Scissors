@@ -6,11 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>Check the console</h1>
-    <script src="script.js"></script>
+    <div class="main">
+        <div class="main-text">
+            <h1>Rock Paper Scissors</h1>
+            <div class="game-start">Click here to play 5 rounds of RPS</div>
+        </div>
+        <div class="main-rps-container">
+            <img class="rock"
+                src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F3bdb2575-9a92-42f8-8472-bb78c7bd118a_720x405.jpeg"
+                alt="rock">
+            <img class="paper"
+                src="https://stationery.lk/wp-content/uploads/2020/07/q_connect_a4_white_bank_paper_50gsm_pack_of_500_kf51015_500x500_800x800_H7jmA8VrW3.png"
+                alt="paper">
+            <img class="scissors"
+                src="https://imageengine.victorinox.com/mediahub/31970/640Wx560H/CUT_8_0904_10__S1.jpg" alt="scissors">
+        </div>
+        <div class="main-score-container">
+            <div class="main-score-container-you">
+                <p>You</p>
+                <p class="player-score-div">0</p>
+            </div>
+            <div class="main-score-container-computer">
+                <p>Computer</p>
+                <p class="computer-score-div">0</p>
+            </div>
+            <div class="main-score-container-draw">
+                <p>Draw</p>
+                <p class="draw-score-div">0</p>
+            </div>
+            <div class="main-score-container-status">
+                <p>Rounds Played</p>
+                <p class="rounds-played-div">0</p>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
 </body>
 
 </html>

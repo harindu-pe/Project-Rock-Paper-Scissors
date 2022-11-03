@@ -1,0 +1,63 @@
+html {
+  background: #018ded
+    url(https://img.freepik.com/free-vector/hand-drawn-minimal-background_23-2149005484.jpg?w=2000);
+  background-size: cover;
+  font-family: "helvetica neue";
+  text-align: center;
+  font-size: 25px;
+  height: 100vh;
+}
+
+img {
+  width: 300px;
+  height: 200px;
+  border-radius: 10%;
+}
+
+img:hover {
+  border-style: solid;
+  border: 5px solid rgb(51, 150, 31);
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef,
+    inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-text {
+  text-align: center;
+}
+
+.game-start {
+  background-color: rgb(45, 134, 218);
+  border-radius: 5%;
+  margin: 20px;
+}
+
+.game-start:hover {
+  background-color: aqua;
+  border-radius: 5%;
+}
+
+.main-rps-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 10px;
+}
+
+.main-score-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-score-container div {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
